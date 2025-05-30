@@ -1,0 +1,1943 @@
+{
+	"info": {
+		"_postman_id": "7cf5dd0f-c210-4147-acbc-5c28d115a6e7",
+		"name": "Path Finders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42973139"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "222",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/login",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "oldPassword",
+											"value": "111",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "222",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "222",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/change/password",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"change",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Student",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "limit",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "currentPage",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/student/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"student",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "680a1f708ec4c275ae7e8216",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/student/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"student",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "680a1f708ec4c275ae7e8216",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/student/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"student",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Mentor",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "limit",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "currentPage",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/mentor/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"mentor",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "680a21db8ec4c275ae7e8241",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/mentor/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"mentor",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "680a21db8ec4c275ae7e8241",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/mentor/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"mentor",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Topics",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "topic",
+											"value": "Cybersecurity",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "security field",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Photos/Brand Images/McDonalds-.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/topic/add",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"topic",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{base_url}}api/topic/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"topic",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "680ba84ff5012e373f215467",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/topic/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"topic",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "680ba731508815aae0b7af1e",
+											"type": "text"
+										},
+										{
+											"key": "topic",
+											"value": "NLP",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "also a subfield of ai",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Photos/HD wallpapers/1649074ecd03634e05639d767e131258.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/topic/update",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"topic",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "680ba84ff5012e373f215467",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/topic/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"topic",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Mentorship Programs",
+					"item": [
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6810af37df620ac7776faf62",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/mentorshipProgram/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"mentorshipProgram",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Discussion Questions",
+					"item": [
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6812f8800a62f979ae2b5585",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/discussionQuestion/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"discussionQuestion",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Discussion Replies",
+					"item": [
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "681368c4356b7c5e880bd61f",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}admin/discussionReplies/changeStatus",
+									"host": [
+										"{{base_url}}admin"
+									],
+									"path": [
+										"discussionReplies",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Goutam Kumar",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "goutam@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "o7",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "1111122222",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/student/register",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"student",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "rohan@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "o7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/login",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWZjMThlYzRjMjc1YWU3ZTgyMWQiLCJlbWFpbCI6InJvaGFuQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiUm9oYW4gU2hhcm1hIiwiaWF0IjoxNzQ1NDk0MzQyLCJleHAiOjE3NDU1ODA3NDJ9.ZHPxYVrRHyLP6rvMsbfpJAtywZsvWkuPrQ7ZCP3DXso",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "oldPassword",
+											"value": "o71",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "o7",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "o7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/change/password",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"change",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Details",
+					"item": [
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWY3MDhlYzRjMjc1YWU3ZTgyMTYiLCJlbWFpbCI6InNhaGlsQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiU2FoaWwgS2hhbm5hIiwiaWF0IjoxNzQ2MjA4OTg0LCJleHAiOjE3NDYyOTUzODR9.cnUKpjtOplLHCqHW5RCyRB8KPF_wvLpwkpfCLTPDsw8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "educationLevel",
+											"value": "Under Graduate",
+											"type": "text"
+										},
+										{
+											"key": "topicInterested[0]",
+											"value": "Hacking",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/student/update",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"student",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enrollment",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWZjMThlYzRjMjc1YWU3ZTgyMWQiLCJlbWFpbCI6InJvaGFuQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiUm9oYW4gU2hhcm1hIiwiaWF0IjoxNzQ1OTI3MDUyLCJleHAiOjE3NDYwMTM0NTJ9.fHgNJq2yTgyRSMI-kaDI829gvOX9LCp8UGcunPR6iQA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "mentorshipId",
+											"value": "6810af7adf620ac7776faf67",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/enrollment/add",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"enrollment",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWY3MDhlYzRjMjc1YWU3ZTgyMTYiLCJlbWFpbCI6InNhaGlsQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiU2FoaWwgS2hhbm5hIiwiaWF0IjoxNzQ2MjA4OTg0LCJleHAiOjE3NDYyOTUzODR9.cnUKpjtOplLHCqHW5RCyRB8KPF_wvLpwkpfCLTPDsw8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{base_url}}api/enrollment/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"enrollment",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6810bb71b1ce0c7f567a14e9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/enrollment/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"enrollment",
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Discussion Replies",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{studentToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "discussionId",
+											"value": "6812f8800a62f979ae2b5585",
+											"type": "text"
+										},
+										{
+											"key": "text",
+											"value": "The future of AI is super cool and long lastic",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/discussionReplies/add",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"discussionReplies",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWY3MDhlYzRjMjc1YWU3ZTgyMTYiLCJlbWFpbCI6InNhaGlsQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiU2FoaWwgS2hhbm5hIiwiaWF0IjoxNzQ2MDczNjY0LCJleHAiOjE3NDYxNjAwNjR9.axtSRb77h2DAWkPMx00sxIQvMF0MqcbX27XVSA4AVm8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}api/discussionReplies/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"discussionReplies",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWY3MDhlYzRjMjc1YWU3ZTgyMTYiLCJlbWFpbCI6InNhaGlsQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiU2FoaWwgS2hhbm5hIiwiaWF0IjoxNzQ2MDczNjY0LCJleHAiOjE3NDYxNjAwNjR9.axtSRb77h2DAWkPMx00sxIQvMF0MqcbX27XVSA4AVm8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "681368c4356b7c5e880bd61f",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/discussionReplies/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"discussionReplies",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{studentToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "text",
+											"value": "hello",
+											"type": "text"
+										},
+										{
+											"key": "_id",
+											"value": "681368c4356b7c5e880bd61f",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/discussionReplies/update",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"discussionReplies",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "feedback & rating",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWZjMThlYzRjMjc1YWU3ZTgyMWQiLCJlbWFpbCI6InJvaGFuQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiUm9oYW4gU2hhcm1hIiwiaWF0IjoxNzQ2NTQ1NjQ1LCJleHAiOjE3NDY2MzIwNDV9.sihtgoD4enwaYUj7pJaY5yvBv3d_fNjw4x8o8v1N4bs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "mentorshipId",
+											"value": "6810af37df620ac7776faf62",
+											"type": "text"
+										},
+										{
+											"key": "rating",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "It was nice",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/feedback/add",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"feedback",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "limit",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/feedback/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"feedback",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{adminToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "681a2aa722818d8eaf4c7eef",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/feedback/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"feedback",
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Mentor",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "mentor3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "o7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/login",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Mentor3",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "mentor3@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "o7",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "9992227771",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/mentor/register",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"mentor",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{mentorToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "oldPassword",
+											"value": "333",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "o7",
+											"type": "text"
+										},
+										{
+											"key": "confirmPassword",
+											"value": "o7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/user/change/password",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"user",
+										"change",
+										"password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Details",
+					"item": [
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODE0NjI4MWNmOWYxMjQ5YWI4YmRlODgiLCJlbWFpbCI6Im1lbnRvcjNAZ21haWwuY29tIiwidXNlclR5cGUiOjIsIm5hbWUiOiJNZW50b3IzIiwiaWF0IjoxNzQ2MTY2NDI0LCJleHAiOjE3NDYyNTI4MjR9.Oln1xSQYh6g-TUndLwcc0KehCWnMddV8khoaEhRb9i4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "experience",
+											"value": "8 years",
+											"type": "text"
+										},
+										{
+											"key": "profile",
+											"value": "Full Stack Developer",
+											"type": "text"
+										},
+										{
+											"key": "graduationYear",
+											"value": "2018",
+											"type": "text"
+										},
+										{
+											"key": "company",
+											"value": "Google",
+											"type": "text"
+										},
+										{
+											"key": "topicInterested[0]",
+											"value": "Robotics",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "topicInterested[1]",
+											"value": "AI",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "topicInterested[2]",
+											"value": "Cybersecurity",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Mentor1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/mentor/update",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"mentor",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Story",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{mentorToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Wheels",
+											"type": "text"
+										},
+										{
+											"key": "story",
+											"value": "Mentoring changed my life forever.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/story/add",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"story",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "limit",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/story/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"story",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "68105409e6f0ec4d29105056",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/story/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"story",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{mentorToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "68105409e6f0ec4d29105056",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "else",
+											"type": "text"
+										},
+										{
+											"key": "story",
+											"value": "wow",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/story/update",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"story",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{mentorToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "680e62e8d541fe9ae0ba9abc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/story/changeStatus",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"story",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Mentorship Program",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODE0NjI4MWNmOWYxMjQ5YWI4YmRlODgiLCJlbWFpbCI6Im1lbnRvcjNAZ21haWwuY29tIiwidXNlclR5cGUiOjIsIm5hbWUiOiJNZW50b3IzIiwiaWF0IjoxNzQ2MjA5ODU4LCJleHAiOjE3NDYyOTYyNTh9.iHsYqeNtXP3nn3NwQfF3YNfHYP1SrbzaV5Zf3D1L2M4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "topics[0]",
+											"value": "database",
+											"type": "text"
+										},
+										{
+											"key": "topics[1]",
+											"value": "mongoDB",
+											"type": "text"
+										},
+										{
+											"key": "sessionDate",
+											"value": "23 August 2025",
+											"type": "text"
+										},
+										{
+											"key": "meetingLink",
+											"value": "https://meet.google.com/xyz-123",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "60",
+											"type": "text"
+										},
+										{
+											"key": "topics[2]",
+											"value": "nlp",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/mentorshipProgram/add",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"mentorshipProgram",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "limit",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/mentorshipProgram/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"mentorshipProgram",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6810af37df620ac7776faf62",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/mentorshipProgram/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"mentorshipProgram",
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Enrollment",
+					"item": [
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODEwY2FiY2Y3YThkNjMyZjBjMDM2NWQiLCJlbWFpbCI6Im1lbnRvcjJAZ21haWwuY29tIiwidXNlclR5cGUiOjIsIm5hbWUiOiJNZW50b3IyIiwiaWF0IjoxNzQ1OTkyNzA3LCJleHAiOjE3NDYwNzkxMDd9.a5LlexCOKV2Y3JmThPKwqQCxRCsu5dP8_Hv7z0521fU",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/D:/Photos/HD wallpapers/rainbow-Animal-Life.jpg"
+										},
+										{
+											"key": "_id",
+											"value": "6810bb71b1ce0c7f567a14e9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/enrollment/update",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"enrollment",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{mentorToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6810bb71b1ce0c7f567a14e9",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}mentor/enrollment/changeStatus",
+									"host": [
+										"{{base_url}}mentor"
+									],
+									"path": [
+										"enrollment",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Discussion Questions",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWY3MDhlYzRjMjc1YWU3ZTgyMTYiLCJlbWFpbCI6InNhaGlsQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiU2FoaWwgS2hhbm5hIiwiaWF0IjoxNzQ2MDczNjY0LCJleHAiOjE3NDYxNjAwNjR9.axtSRb77h2DAWkPMx00sxIQvMF0MqcbX27XVSA4AVm8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Ai",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "i want to know about its future",
+											"type": "text"
+										},
+										{
+											"key": "tags[0]",
+											"value": "Ai in future",
+											"type": "text"
+										},
+										{
+											"key": "tags[1]",
+											"value": "Next generation",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/discussionQuestion/add",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"discussionQuestion",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODEwY2FiY2Y3YThkNjMyZjBjMDM2NWQiLCJlbWFpbCI6Im1lbnRvcjJAZ21haWwuY29tIiwidXNlclR5cGUiOjIsIm5hbWUiOiJNZW50b3IyIiwiaWF0IjoxNzQ2MTAyMzk0LCJleHAiOjE3NDYxODg3OTR9.Jzl-wBFTBNqAKt8Sf-fOm8YPT7zkrB5Z2PmpvZpxmMk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/discussionQuestion/all",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"discussionQuestion",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6812f8800a62f979ae2b5585",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}api/discussionQuestion/single",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"discussionQuestion",
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODBhMWZjMThlYzRjMjc1YWU3ZTgyMWQiLCJlbWFpbCI6InJvaGFuQGdtYWlsLmNvbSIsInVzZXJUeXBlIjozLCJuYW1lIjoiUm9oYW4gU2hhcm1hIiwiaWF0IjoxNzQ2MDc0MTg4LCJleHAiOjE3NDYxNjA1ODh9.mpeT53wHThFN0W1KBuLN4fZF8UEa02QrBCpnc7UuS0M",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6812f8800a62f979ae2b5585",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "ML",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "What's the future of ML?",
+											"type": "text"
+										},
+										{
+											"key": "tags[0]",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}student/discussionQuestion/update",
+									"host": [
+										"{{base_url}}student"
+									],
+									"path": [
+										"discussionQuestion",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
